@@ -24,6 +24,6 @@ mkdir -p "$mount_point"
 mount UUID="$drive_uuid" "$mount_point"
 
 drive_type=$(blkid -s TYPE -o value /dev/"$dev_name")
-echo "UUID=$drive_uuid $mount_point $drive_type defaults 0 2" >> /etc/fstab
+echo "UUID=$drive_uuid $mount_point $drive_type defaults,nofail 0 2" >> /etc/fstab
 
 echo "Mounted $dev_name at $mount_point and updated fstab."
