@@ -27,3 +27,6 @@ drive_type=$(blkid -s TYPE -o value /dev/"$dev_name")
 echo "UUID=$drive_uuid $mount_point $drive_type defaults,nofail 0 2" >> /etc/fstab
 
 echo "Mounted $dev_name at $mount_point and updated fstab."
+
+chmod 777 /media/"$mnt_name"
+echo "Gave read and write access to /media/$mnt_name"
